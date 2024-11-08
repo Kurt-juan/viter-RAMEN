@@ -47,6 +47,9 @@ export default {
     animation: {
       rotate: "rotate 2s linear infinite",
       loading: "loading 1.5s ease-in infinite",
+      fade: "fade .2s ease-in ",
+      slideLeft: "slideLeft .2s ease-in",
+      slideUp: "slideUp .2s ease-in"
     },
 
 
@@ -58,6 +61,33 @@ export default {
         "0%": { transform: "translateX(-100%)" },
         "100%": { transform: "translateX(100%)" },
       },
+      fade: {
+        "0%": {opacity: "0"},
+        "100%": {opacity: "1"},
+      },
+
+      slideLeft: {
+        "0%": {
+          opacity: "0",
+          transform:"translateX(50%)"
+         },
+        "100%": {
+            opacity: "1",
+           transform:"translateX(0%)"
+         },
+      },
+
+      slideUp: {
+        "0%": {
+          opacity: "0",
+          transform:"translateY(50%)"
+         },
+        "100%": {
+            opacity: "1",
+           transform:"translateY(0%)"
+         },
+      }
+
     },
   },
   plugins: [],

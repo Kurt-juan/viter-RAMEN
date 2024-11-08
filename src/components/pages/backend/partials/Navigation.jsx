@@ -1,8 +1,10 @@
 import { imgPath } from "@/components/helpers/functions-general";
 import {
   Clapperboard,
+  Dessert,
   LayoutDashboard,
   ReceiptText,
+  Shell,
   Soup,
   Star,
 } from "lucide-react";
@@ -37,7 +39,7 @@ const Navigation = ({ menu= "" }) => {
           <li>
             <Link
               to="/admin/ramen"
-              className={`${menu === "movies" ? "active" : ""} nav-link`}
+              className={`${menu === "ramen" ? "active" : ""} nav-link`}
             >
               {" "}
               <Soup size={18} strokeWidth={1} /> Ramen{" "}
@@ -46,18 +48,28 @@ const Navigation = ({ menu= "" }) => {
 
           <li>
             <Link
-              to="/admin/side-desserts"
-              className={`${menu === "movies" ? "active" : ""} nav-link`}
+              to="/admin/toppings"
+              className={`${menu === "toppings" ? "active" : ""} nav-link`}
             >
               {" "}
-              <Soup size={18} strokeWidth={1} /> Side & Dessert{" "}
+              <Shell size={18} strokeWidth={1} /> Toppings{" "}
             </Link>
           </li>
 
           <li>
             <Link
-              to="/admin/side-drinks"
-              className={`${menu === "movies" ? "active" : ""} nav-link`}
+              to="/admin/dessert"
+              className={`${menu === "dessert" ? "active" : ""} nav-link`}
+            >
+              {" "}
+              <Dessert size={18} strokeWidth={1} /> Side & Dessert{" "}
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/admin/drinks"
+              className={`${menu === "drinks" ? "active" : ""} nav-link`}
             >
               {" "}
               <Soup size={18} strokeWidth={1} /> Drinks{" "}

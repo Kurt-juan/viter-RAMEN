@@ -3,10 +3,13 @@ import React from 'react'
 import Heading from '../partials/Heading'
 import Navigation from '../partials/Navigation'
 import Footer from '../partials/Footer'
+import Category from './category/Category'
+import Mop from './mop/Mop'
+import Promo from './promo/Promo'
 
 const Settings = () => {
    const [currentSettings, setCurrentSettings] = React.useState(0)
-   const settingsTable = []
+   const settingsTable = [<Category/>, <Mop/>, <Promo/>]
    
    const handleSettingTab = (index) => setCurrentSettings(index)
     return (
@@ -26,7 +29,7 @@ const Settings = () => {
                                 <li><button onClick= {()=>handleSettingTab(2)} className={`tab-link ${currentSettings === 2 ? "active" : ""}`}>Promo</button></li>
                             </ul>           
                          </nav>
-                        {/* {settingsTable[currentSettings]} */}
+                        {settingsTable[currentSettings]}
 
                     </div>
                     <Footer/>

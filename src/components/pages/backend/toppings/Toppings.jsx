@@ -2,17 +2,18 @@ import React from 'react'
 import Navigation from '../partials/Navigation'
 import Footer from '../partials/Footer'
 import Heading from '../partials/Heading'
-import SideDessertTable from './SideDessertTable'
+import ToppingsTable from './ToppingsTable'
 
-const SideDessert = () => {
+
+const Toppings = () => {
   return (
     <section className="flex  min-h-screen bg-secondary">
     <aside className="bg-primary text-dark basis-[200px] border-r border-line">
-      <Navigation  />
+      <Navigation menu ="toppings" />
     </aside>
     <main className="basis-[calc(100%-200px)] min-h-[100vh] grid grid-rows-[auto_1fr_auto]">
-      <Heading />
-      <SideDessertTable/>
+      <Heading title = "Toppings" subtitle='Manage Toppings list' />
+      <ToppingsTable/>
       <div></div>
       
       <Footer />
@@ -21,4 +22,4 @@ const SideDessert = () => {
   )
 }
 
-export default SideDessert
+export default Toppings

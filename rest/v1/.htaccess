@@ -1,0 +1,59 @@
+RewriteEngine On
+# use for authentication
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+Header set Access-Control-Allow-Origin *
+
+#################################### ALL FOR DEVELOPER #################################
+
+RewriteRule ^upload-photo$ core/upload-photo.php [L]
+
+### Category ###
+RewriteRule ^category$ controllers/developer/settings/category/category.php [L]
+RewriteRule ^category/([0-9]+)$ controllers/developer/settings/category/category.php?categoryid=$1 [L]
+RewriteRule ^category/active/([0-9]+)$ controllers/developer/settings/category/active.php?categoryid=$1 [L]
+
+
+### MOP ###
+RewriteRule ^mop$ controllers/developer/settings/mop/mop.php [L]
+RewriteRule ^mop/([0-9]+)$ controllers/developer/settings/mop/mop.php?mopid=$1 [L]
+RewriteRule ^mop/active/([0-9]+)$ controllers/developer/settings/mop/active.php?mopid=$1 [L]
+
+### PROMO ###
+RewriteRule ^promo$ controllers/developer/settings/promo/promo.php [L]
+RewriteRule ^promo/([0-9]+)$ controllers/developer/settings/promo/promo.php?promoid=$1 [L]
+RewriteRule ^promo/active/([0-9]+)$ controllers/developer/settings/promo/active.php?promoid=$1 [L]
+
+
+### RAMEN ###
+RewriteRule ^ramen$ controllers/developer/ramen/ramen.php [L]
+RewriteRule ^ramen/([0-9]+)$ controllers/developer/ramen/ramen.php?ramenid=$1 [L]
+RewriteRule ^ramen/active/([0-9]+)$ controllers/developer/ramen/active.php?ramenid=$1 [L]
+RewriteRule ^ramen/search$ controllers/developer/ramen/search.php [L]
+RewriteRule ^ramen/page/([0-9]+)$ controllers/developer/ramen/page.php?start=$1 [L]
+
+### DRINKS ###
+RewriteRule ^drinks$ controllers/developer/drinks/drinks.php [L]
+RewriteRule ^drinks/([0-9]+)$ controllers/developer/drinks/drinks.php?drinksid=$1 [L]
+RewriteRule ^drinks/active/([0-9]+)$ controllers/developer/drinks/active.php?drinksid=$1 [L]
+RewriteRule ^drinks/search$ controllers/developer/drinks/search.php [L]
+RewriteRule ^drinks/page/([0-9]+)$ controllers/developer/drinks/page.php?start=$1 [L]
+
+### DESSERT ###
+RewriteRule ^dessert$ controllers/developer/dessert/dessert.php [L]
+RewriteRule ^dessert/([0-9]+)$ controllers/developer/dessert/dessert.php?dessertid=$1 [L]
+RewriteRule ^dessert/active/([0-9]+)$ controllers/developer/dessert/active.php?dessertid=$1 [L]
+RewriteRule ^dessert/search$ controllers/developer/dessert/search.php [L]
+RewriteRule ^dessert/page/([0-9]+)$ controllers/developer/dessert/page.php?start=$1 [L]
+
+### toppings ###
+RewriteRule ^toppings$ controllers/developer/toppings/toppings.php [L]
+RewriteRule ^toppings/([0-9]+)$ controllers/developer/toppings/toppings.php?toppingsid=$1 [L]
+RewriteRule ^toppings/active/([0-9]+)$ controllers/developer/toppings/active.php?toppingsid=$1 [L]
+RewriteRule ^toppings/search$ controllers/developer/toppings/search.php [L]
+RewriteRule ^toppings/page/([0-9]+)$ controllers/developer/toppings/page.php?start=$1 [L]
+
+

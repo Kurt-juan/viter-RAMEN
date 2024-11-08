@@ -6,7 +6,7 @@ import { setValidate } from '@/components/store/storeAction'
 
 const ModalValidate = ({}) => {
 
-  const {dispatch} = React.useContext(StoreContext)
+  const {dispatch, store} = React.useContext(StoreContext)
   const handleClose = () => dispatch(setValidate(false))
   return (
  

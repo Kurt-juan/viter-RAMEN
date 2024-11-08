@@ -9,7 +9,7 @@ const Instruction = () => {
       <h2 className="text-accent text-center">How to Order At Michi</h2>
 
 
-      <div className="grid grid-cols-[170px,_40px,_170px,_40px_170px] gap-10 mt-10 max-w-[700px] mx-auto items-center justify-center">
+      <div className="grid md:grid-cols-[170px,_40px,_170px,_40px_170px] gap-10 mt-10 max-w-[700px] mx-auto items-center justify-center">
         <div className="text-center">
           <img
             src={`${imgPath}/ramen-step-1.jpg`}
@@ -23,7 +23,7 @@ const Instruction = () => {
         <ChevronRight
           stroke={"#e60033"}
           size={60}
-          className="-translate-x-2 -translate-y-4"
+          className="-translate-x-2 -translate-y-4 rotate-90 md:rotate-0 mx-auto"
         />
         <div className="text-center">
           <img
@@ -38,7 +38,7 @@ const Instruction = () => {
         <ChevronRight
           stroke={"#e60033"}
           size={60}
-          className="-translate-x-2 -translate-y-4"
+          className="-translate-x-2 -translate-y-4 rotate-90 md:rotate-0 mx-auto"
         />
         <div className="text-center">
           <img
