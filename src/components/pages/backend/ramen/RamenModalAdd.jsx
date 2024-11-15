@@ -107,42 +107,42 @@ const RamenModalAdd = ({itemEdit}) => {
 
 
                 <div className="modal-body  p-3 px-4 ">
-                <div className="input-wrap relative  group input-photo-wrap h-[150px] ">
-                {itemEdit === null && photo === null ? (
-                  <div className="w-full  rounded-md flex justify-center items-center flex-col h-full">
-                    <ImagePlusIcon
-                      size={50}
-                      strokeWidth={1}
-                      className="opacity-20 group-hover:opacity-50 transition-opacity"
+                  <div className="input-wrap relative  group input-photo-wrap h-[150px] ">
+                  {itemEdit === null && photo === null ? (
+                    <div className="w-full  rounded-md flex justify-center items-center flex-col h-full">
+                      <ImagePlusIcon
+                        size={50}
+                        strokeWidth={1}
+                        className="opacity-20 group-hover:opacity-50 transition-opacity"
+                      />
+                      <small className="opacity-20 group-hover:opacity-50 transition-opacity">
+                        Upload Photo
+                      </small>
+                    </div>
+                  ) : (
+                    <img
+                      src={
+                        photo
+                          ? URL.createObjectURL(photo) // preview
+                          : imgPath + "/" + itemEdit?.ramen_photo // check db
+                      }
+                      alt="employee photo"
+                      className={`group-hover:opacity-30 duration-200 relative object-cover h-full w-full  m-auto ${mutation.isPending ? "opacity-40 pointer-events-none" : ""}`}
                     />
-                    <small className="opacity-20 group-hover:opacity-50 transition-opacity">
-                      Upload Photo
-                    </small>
-                  </div>
-                ) : (
-                  <img
-                    src={
-                      photo
-                        ? URL.createObjectURL(photo) // preview
-                        : imgPath + "/" + itemEdit?.ramen_photo // check db
-                    }
-                    alt="employee photo"
-                    className={`group-hover:opacity-30 duration-200 relative object-cover h-full w-full  m-auto ${mutation.isPending ? "opacity-40 pointer-events-none" : ""}`}
+                  )}
+
+
+                  <InputPhotoUpload
+                    name="photo"
+                    type="file"
+                    id="photo"
+                    accept="image/*"
+                    title="Upload photo"
+                    onChange={(e) => handleChangePhoto(e)}
+                    onDrop={(e) => handleChangePhoto(e)}
+                    className={`opacity-0 absolute top-0 right-0 bottom-0 left-0 rounded-full  m-auto cursor-pointer w-full h-full ${mutation.isPending ? "pointer-events-none" : ""}`}
                   />
-                )}
-
-
-                <InputPhotoUpload
-                  name="photo"
-                  type="file"
-                  id="photo"
-                  accept="image/*"
-                  title="Upload photo"
-                  onChange={(e) => handleChangePhoto(e)}
-                  onDrop={(e) => handleChangePhoto(e)}
-                  className={`opacity-0 absolute top-0 right-0 bottom-0 left-0 rounded-full  m-auto cursor-pointer w-full h-full ${mutation.isPending ? "pointer-events-none" : ""}`}
-                />
-              </div>
+                </div>
                  
 
                   <div className="input-wrap">
